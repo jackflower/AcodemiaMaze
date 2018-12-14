@@ -6,7 +6,7 @@
 [ext_resource path="res://raider/Raider.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tower/Tower.tscn" type="PackedScene" id=5]
 
-[node name="Level_a" type="Node2D"]
+[node name="Level_a" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
