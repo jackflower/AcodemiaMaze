@@ -1,6 +1,6 @@
 extends Area2D
 
-# 2019-01-05 acodemia.pl
+# 2018-12-01 acodemia.pl
 
 func _ready():
 	$AnimatedSprite.play("explosion_animation")

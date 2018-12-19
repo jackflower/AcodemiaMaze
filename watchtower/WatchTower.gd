@@ -1,6 +1,12 @@
 extends KinematicBody2D
 
 # 2019-01-05 acodemia.pl
+#
+#
+# przeróbka...
+# dwa punkty wystrzału
+# czyli strzał dubeltowy
+# 
 
 var health = 20
 var on_scene = false
@@ -14,7 +20,7 @@ var tower_rotation = 0
 var distance_to_target = 0
 var target_position = Vector2(0, 0)
 var bullet_vector = Vector2(0, 0)
-var bullet_data = preload("res://tower/BulletTower.tscn")
+var bullet_data = preload("res://watchtower/BulletWatchTower.tscn")
 
 export (float) var created_bullet_speed = 200
 export (float) var created_bullet_scale_factor = 0.5
@@ -59,23 +65,31 @@ func _physics_process(delta):
 	
 	
 func create_bullet():
-	# tworzymy pocisk
-	var bullet = bullet_data.instance()
+	# tworzymy dwa pocisk
+	var bullet_left = bullet_data.instance()
+	var bullet_right = bullet_data.instance()
 	# ustawiamy pocisk na pozycji startowej
-	bullet.position = $BulletStartPosition2D.global_position
+	bullet_left.position = $BulletStartPosition2D_Left.global_position
+	bullet_right.position = $BulletStartPosition2D_Right.global_position
 	# ustawiamy skalę
-	bullet.global_scale = global_scale * created_bullet_scale_factor
+	bullet_left.global_scale = global_scale * created_bullet_scale_factor
+	bullet_right.global_scale = global_scale * created_bullet_scale_factor
 	# prędkość pocisku
-	bullet.bullet_speed = created_bullet_speed
+	bullet_left.bullet_speed = created_bullet_speed
+	bullet_right.bullet_speed = created_bullet_speed
 	# znormalizowany wektor kierunku pocisku
 	bullet_vector = (target_position - global_position).normalized()
-	bullet.bullet_direction = Vector2(bullet_vector)
+	bullet_left.bullet_direction = Vector2(bullet_vector)
+	bullet_right.bullet_direction = Vector2(bullet_vector)
 	# obrót pocisku
-	bullet.global_rotation_degrees = rotation_degrees
+	bullet_left.global_rotation_degrees = rotation_degrees
+	bullet_right.global_rotation_degrees = rotation_degrees
 	# kaliber - siła rażenia
-	bullet.caliber = bullet_caliber
+	bullet_left.caliber = bullet_caliber
+	bullet_right.caliber = bullet_caliber
 	# dodajemy pocisk do sceny
-	get_parent().add_child(bullet)
+	get_parent().add_child(bullet_left)
+	get_parent().add_child(bullet_right)
 	# blokujemy strzelanie - timer je odblokuje
 	shooting = false
 	pass

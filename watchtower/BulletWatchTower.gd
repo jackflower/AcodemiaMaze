@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-# 2019-01-05 acodemia.pl
+# 2018-12-08 acodemia.pl
 
 var bullet_speed = 200
 var bullet_direction = Vector2(0, 0)
@@ -35,7 +35,7 @@ func _physics_process(delta):
 	
 	
 func explode():
-	var explosion = preload("res://explosion/Explosion.tscn").instance()
+	var explosion = preload("res://watchtower/explosion/Explosion.tscn").instance()
 	explosion.global_position = global_position
 	explosion.global_scale = self.global_scale
 	explosion.get_node("AnimatedSprite").get_sprite_frames().set_animation_speed(explosion.get_node("AnimatedSprite").get_animation(), bullet_speed)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://raider/Raider.gd" type="Script" id=1]
-[ext_resource path="res://raider/raider.png" type="Texture" id=2]
+[ext_resource path="res://tankette/Tankette.gd" type="Script" id=1]
+[ext_resource path="res://tankette/tankette.png" type="Texture" id=2]
 
-[node name="Raider" type="KinematicBody2D"]
+[node name="Tankette" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1

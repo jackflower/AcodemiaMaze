@@ -1,8 +1,11 @@
 extends Node2D
 
-# 2018-12-08 acodemia.pl
+# 2019-01-05 acodemia.pl
 
 func _ready():
-	$Tower.setTarget($Raider)
+	$Tower_01.setTarget($Tankette)
+	$Tower_02.setTarget($Tankette)
+	$Tower_03.setTarget($Tankette)
+	$WatchTower.setTarget($Tankette)
 	pass
 	
