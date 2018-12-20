@@ -22,11 +22,11 @@ texture = ExtResource( 2 )
 
 visible = false
 build_mode = 0
-polygon = PoolVector2Array( -4, -42, 4, -42, 4, -29, 15, -29, 15, -21, 22, -18, 22, -12, 30, -12, 30, 29, 23, 42, -23, 42, -30, 29, -30, -13, -22, -13, -22, -18, -15, -21, -15, -29, -4, -29 )
+polygon = PoolVector2Array( 4, -31, 4, -28, 13, -28, 13, -25, 16, -25, 16, -23, 22, -23, 22, -7, 20, -7, 20, 3, 21, 3, 21, 15, 23, 15, 23, 21, 22, 21, 22, 23, 21, 23, 21, 25, 20, 25, 20, 27, 11, 27, 11, 25, -11, 25, -11, 27, -21, 27, -21, 4, -22, 4, -22, -22, -16, -22, -16, -25, -13, -25, -13, -28, -4, -28, -4, -31 )
 
 [node name="BulletPosition2D" type="Position2D" parent="." index="2"]
 
-position = Vector2( 0, -60 )
+position = Vector2( 0, -44 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TimerShoot" type="Timer" parent="." index="3"]
