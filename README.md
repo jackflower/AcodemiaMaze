@@ -1,4 +1,4 @@
-# Projekt Acodemia -Acodemia Maze
+# Projekt Acodemia - Acodemia Maze
 
 Godot Engine 3.0.6 released July 29, 2018
 
