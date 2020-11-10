@@ -29,8 +29,13 @@ func _ready():
 	
 	
 func createExplosion():
+	#if(explosion):
+	#	explosion.get_node("AnimationPlayer").play("explode")
+	#	add_child(explosion)
+	#	pass
 	explosion.get_node("AnimationPlayer").play("explode")
-	add_child(explosion)
+	explosion.global_position = self.global_position
+	get_parent().add_child(explosion)
 	pass
 	
 	
@@ -42,5 +47,6 @@ func _on_Mine_body_entered( body ):
 	
 func _on_AnimationPlayer_animation_finished( anim_name ):
 	createExplosion()
+	queue_free()
 	pass
 	
